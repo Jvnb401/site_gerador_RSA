@@ -84,9 +84,16 @@ function decipher() {
     raw.value = "";
 
     try {
-        for (let i = 0; i < encrypted.length; i += 3) {
-            const num = encrypted[i] + encrypted[i + 1] + encrypted[i + 2];
-            arrNum.push(BigInt(parseInt(num)));
+        const jump = n == 10 ? 1 : n.toString().length;
+        for (let i = 0; i < encrypted.length; i += jump) {
+            let num = encrypted[i];
+            for (let j = 1; j < jump; j++) { num += encrypted[i + j] }
+            num = BigInt(parseInt(num))
+            if (num < n) {
+                arrNum.push(num);
+            } else {
+                alert(`coloque numeros menores que ${n}`);
+            }
         }
     } catch (error) {
         alert("deu erro, verifique se utilizou apenas numeros");
@@ -108,9 +115,16 @@ function encrypt() {
     encrypted.value = "";
 
     try {
-        for (let i = 0; i < raw.length; i += 3) {
-            const num = raw[i] + raw[i + 1] + raw[i + 2];
-            arrNum.push(BigInt(parseInt(num)));
+        const jump = n == 10 ? 1 : n.toString().length;
+        for (let i = 0; i < raw.length; i += jump) {
+            let num = raw[i];
+            for (let j = 1; j < jump; j++) { num += raw[i + j] }
+            num = BigInt(parseInt(num))
+            if (num < n) {
+                arrNum.push(num);
+            } else {
+                alert(`coloque numeros menores que ${n}`);
+            }
         }
     } catch (e) {
         alert("deu erro, verifique se utilizou apenas numeros");
