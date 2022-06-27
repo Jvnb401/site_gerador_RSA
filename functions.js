@@ -82,10 +82,15 @@ function decipher() {
     encrypted = encrypted.replace(/\s/gi, "");
     raw.value = "";
 
-    for (let i = 0; i < encrypted.length; i += 3) {
-        const num = encrypted[i] + encrypted[i + 1] + encrypted[i + 2];
-        arrNum.push(BigInt(parseInt(num)));
+    try {
+        for (let i = 0; i < encrypted.length; i += 3) {
+            const num = encrypted[i] + encrypted[i + 1] + encrypted[i + 2];
+            arrNum.push(BigInt(parseInt(num)));
+        }
+    } catch (error) {
+        alert("deu erro, verifique se utilizou apenas numeros")
     }
+
 
     arrNum.map((x) => {
         x = (x ** d) % n;
@@ -101,9 +106,13 @@ function encrypt() {
     raw = raw.replace(/\s/gi, "");
     encrypted.value = "";
 
-    for (let i = 0; i < raw.length; i += 3) {
-        const num = raw[i] + raw[i + 1] + raw[i + 2];
-        arrNum.push(BigInt(parseInt(num)));
+    try {
+        for (let i = 0; i < raw.length; i += 3) {
+            const num = raw[i] + raw[i + 1] + raw[i + 2];
+            arrNum.push(BigInt(parseInt(num)));
+        }
+    } catch (e) {
+        alert("deu erro, verifique se utilizou apenas numeros")
     }
 
     arrNum.map((x) => {

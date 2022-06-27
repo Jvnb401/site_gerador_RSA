@@ -12,13 +12,23 @@ header {
     justify-content: center;
 }
 
-.dis {
-    width: 20px;
+fieldset {
+    display: grid;
+    justify-content: center;
 }
 
 label {
     display: inline-block;
     width: 110px;
+}
+
+#dadosRSA fieldset {
+    justify-content: normal;
+}
+
+#messagen fieldset {
+    justify-content: normal;
+    row-gap: 5px;
 }
 
 #privateKey {
@@ -47,4 +57,12 @@ label {
 
 .hide {
     display: none;
+}
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 50vw calc(50vw - 10px);
+        column-gap: 5px;
+    }
 }
