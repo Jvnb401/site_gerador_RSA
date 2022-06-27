@@ -4,6 +4,8 @@
 }
 
 body {
+    background-color: #000020;
+    color: #ccc;
     padding: 2.5px;
 }
 
@@ -76,6 +78,7 @@ footer p a {
 svg {
     height: 20px;
     width: 20px;
+    fill: #ccc;
 }
 
 @media (min-width: 768px) {
