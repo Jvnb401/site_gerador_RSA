@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2.5px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.dis {
+    width: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 110px;
+}
+
+#privateKey {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "text keys""numberKeys keys";
+    gap: 10px;
+}
+
+#privateKey label {
+    grid-area: text;
+    align-self: end;
+    text-align: center;
+}
+
+#qtdKeys {
+    grid-area: numberKeys;
+    width: 90%;
+}
+
+#keys {
+    width: 100%;
+    height: 162px;
+    grid-area: keys;
+}
+
+.hide {
+    display: none;
+}
