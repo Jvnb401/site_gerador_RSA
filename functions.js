@@ -60,7 +60,7 @@ function Start() {
     c = document.getElementById("c").value;
     if (!(1 < c && c < phiN && MDC(phiN, c) == 1)) {
         alert(`a chave publica deve atender aos requisitos:
-        mdc(φ(n), e) = 1 e 1 < E < φ(n)
+        mdc(φ(n), c) = 1 e 1 < C < φ(n)
         obs: no caso φ(n) é ${phiN}`);
         return
     }
