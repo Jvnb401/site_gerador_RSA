@@ -65,6 +65,7 @@ function Start() {
         return
     }
 
+    d = 0;
     while ((d * c) % phiN != 1) { d++ }
     document.getElementById('d').value = d;
 
@@ -88,7 +89,7 @@ function decipher() {
             arrNum.push(BigInt(parseInt(num)));
         }
     } catch (error) {
-        alert("deu erro, verifique se utilizou apenas numeros")
+        alert("deu erro, verifique se utilizou apenas numeros");
     }
 
 
@@ -112,7 +113,7 @@ function encrypt() {
             arrNum.push(BigInt(parseInt(num)));
         }
     } catch (e) {
-        alert("deu erro, verifique se utilizou apenas numeros")
+        alert("deu erro, verifique se utilizou apenas numeros");
     }
 
     arrNum.map((x) => {
