@@ -55,7 +55,9 @@ function Start() {
     n = p * q;
     let phiN = (p - 1) * (q - 1);
     document.getElementById("modN").value = n;
+    document.getElementById("modN").classList.add('actived');
     document.getElementById("n").value = phiN;
+    document.getElementById("n").classList.add('actived');
 
     c = document.getElementById("c").value;
     if (!(1 < c && c < phiN && MDC(phiN, c) == 1)) {
@@ -68,6 +70,7 @@ function Start() {
     d = 0;
     while ((d * c) % phiN != 1) { d++ }
     document.getElementById('d').value = d;
+    document.getElementById("d").classList.add('actived');
 
 
     test.classList.remove('hide');

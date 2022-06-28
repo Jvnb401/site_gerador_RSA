@@ -22,34 +22,41 @@
                 <fieldset name="privados">
                     <legend>componentes privados</legend>
 
-                    <label for="p">Numero primo p</label>
-                    <input type="number" id="p" name="p" list="primeNumbers" required>
-                    <br><br>
+                    <div class="inputBox">
+                        <input type="number" id="p" name="p" list="primeNumbers" required>
+                        <label for="p">Numero primo p</label>
+                    </div>
 
-                    <label for="q">Numero primo q</label>
-                    <input type="number" id="q" name="q" list="primeNumbers" required>
-                    <br><br>
+                    <div class="inputBox">
+                        <input type="number" id="q" name="q" list="primeNumbers" required>
+                        <label for="q">Numero primo q</label>
+                    </div>
 
-                    <label for="n">φ (n)</label>
-                    <input type="number" id="n" disabled="true">
-                    <br><br>
+                    <div class="inputBox">
+                        <input type="number" id="n" disabled="true">
+                        <label for="n">φ (n)</label>
+                    </div>
 
-                    <label for="d">chave privada d</label>
-                    <input type="number" id="d" disabled="true">
-                    <br>
+
+                    <div class="inputBox">
+                        <input type="number" id="d" disabled="true">
+                        <label for="d">chave privada d</label>
+                    </div>
 
                 </fieldset>
 
                 <fieldset>
                     <legend>componentes publicos</legend>
 
-                    <label for="modN">Módulo n</label>
-                    <input type="number" id="modN" disabled="true">
-                    <br><br>
+                    <div class="inputBox">
+                        <input type="number" id="modN" disabled="true">
+                        <label for="modN">Módulo n</label>
+                    </div>
 
-                    <label for="c">chave publica c</label>
-                    <input type="number" id="c" name="c" required>
-                    <br>
+                    <div class="inputBox">
+                        <input type="number" id="c" name="c" required>
+                        <label for="c">chave publica c</label>
+                    </div>
 
                 </fieldset>
             </fieldset>
@@ -64,7 +71,7 @@
                 <legend>crifrar numeros</legend>
 
                 <label for="rawData" class="hide">numeros decifrados</label>
-                <textarea name="texto" id="rawData" rows="10"></textarea>
+                <textarea name="texto" id="rawData" rows="10" placeholder="numeros decifrados"></textarea>
                 <button onclick="encrypt()">cifrar dados</button>
             </fieldset>
 
@@ -72,7 +79,7 @@
                 <legend>decrifrar numeros</legend>
 
                 <label for="encryptedData" class="hide">numeros cifrados</label>
-                <textarea name="texto" id="encryptedData" rows="10"></textarea>
+                <textarea name="texto" id="encryptedData" rows="10" placeholder="numeros cifrados"></textarea>
                 <button onclick="decipher()">decifrar dados</button>
             </fieldset>
 

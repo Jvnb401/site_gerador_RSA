@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #000020;
+    background-color: #000010;
     color: #ccc;
     padding: 2.5px;
 }
@@ -18,11 +18,64 @@ header {
 fieldset {
     display: grid;
     justify-content: center;
+    background-color: #ffffff2f;
+    box-shadow: 0 15px 35px #0000f050;
+    border: 0;
+}
+
+.inputBox {
+    margin: 12px 0;
+    color: #aaa;
+    position: relative;
+}
+
+.actived,
+.inputBox input:focus,
+.inputBox input:valid,
+textarea:focus,
+textarea:valid {
+    border: 1px solid #0ff;
+    color: #00ffffcc;
+}
+
+.inputBox .actived~label,
+.inputBox input:focus~label,
+.inputBox input:valid~label {
+    color: #0ff;
+    letter-spacing: .15em;
+    font-size: .65em;
+    transform: translateY(-10px);
+    padding: 0 10px;
+    background-color: #555560;
+    border-left: 1px solid #0ff;
+    border-right: 1px solid #0ff;
+    width: auto;
 }
 
 label {
     display: inline-block;
-    width: 110px;
+    width: 128px;
+    position: absolute;
+    left: 0;
+    margin: 6px;
+    transition: .5s;
+}
+
+input,
+textarea {
+    border: 1px solid #ffffff20;
+    background-color: inherit;
+    border-radius: 2.5px;
+    color: inherit;
+    outline: none;
+}
+
+input {
+    height: 30px;
+}
+
+::placeholder {
+    color: #ccc;
 }
 
 #dadosRSA fieldset {
