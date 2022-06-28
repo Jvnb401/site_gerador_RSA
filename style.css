@@ -18,6 +18,30 @@ header {
     margin-bottom: 8px;
 }
 
+
+header button:first-of-type {
+    color: #0ff;
+    background-color: #ff0000f0;
+    border: none;
+    text-shadow: 0 1px 2px #0ff;
+    box-shadow: 0 0px 32px #ff0000;
+    transition: .5s;
+}
+
+header button {
+    border-radius: 5px;
+    color: #fff;
+    background-color: #0f0;
+    border: none;
+    text-shadow: 0 1px 2px #0000f0b8;
+    box-shadow: 0 0px 32px #0fa;
+    margin: 0 2.5px;
+}
+
+header button:hover {
+    box-shadow: inset 0px 0px 6px #000010;
+}
+
 fieldset {
     display: grid;
     justify-content: center;
@@ -39,8 +63,8 @@ input:disabled {
 .inputBox .actived,
 .inputBox input:focus,
 .inputBox input:valid,
-textarea:focus,
-textarea:valid {
+textarea:valid,
+textarea:focus {
     border: 1px solid #0ff;
     color: #00ffffcc;
 }
@@ -122,6 +146,16 @@ input {
     display: none;
 }
 
+fieldset button {
+    height: 25px;
+    color: #0005a9;
+    background-color: #0cc;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 0 1px 2px #0000f0b8;
+    box-shadow: 0 0px 32px #0cc;
+}
+
 footer p {
     display: flex;
     justify-content: center;
@@ -142,10 +176,18 @@ svg {
 }
 
 @media (min-width: 768px) {
+
+    header button {
+        width: 100px;
+        height: 50px;
+        transition: .5s;
+    }
+
     main {
         display: grid;
         grid-template-columns: 40vw calc(40vw - 10px);
         column-gap: 6px;
         justify-content: center;
+        align-items: center;
     }
 }
