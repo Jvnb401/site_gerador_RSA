@@ -7,6 +7,9 @@ body {
     background-color: #000010;
     color: #ccc;
     padding: 2.5px;
+    height: 100vh;
+    display: grid;
+    align-items: center;
 }
 
 header {
