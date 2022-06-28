@@ -32,7 +32,11 @@ fieldset {
     position: relative;
 }
 
-.actived,
+input:disabled {
+    border: 0;
+}
+
+.inputBox .actived,
 .inputBox input:focus,
 .inputBox input:valid,
 textarea:focus,
