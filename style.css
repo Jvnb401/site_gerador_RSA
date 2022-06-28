@@ -156,6 +156,10 @@ fieldset button {
     box-shadow: 0 0px 32px #0cc;
 }
 
+fieldset button:hover {
+    box-shadow: 0 0px 16px #0cc;
+}
+
 footer p {
     display: flex;
     justify-content: center;
