@@ -83,19 +83,24 @@ function Start() {
 function decipher() {
     let raw = document.getElementById("rawData");
     let encrypted = document.getElementById("encryptedData").value;
-    encrypted = encrypted.replace(/\s/gi, "");
+    document.getElementById("encryptedData").value = "";
+    encrypted = encrypted.replace(/\s/, "").split(`\n`);
     raw.value = "";
 
     try {
         const jump = n == 10 ? 1 : n.toString().length;
-        for (let i = 0; i < encrypted.length; i += jump) {
-            let num = encrypted[i];
-            for (let j = 1; j < jump; j++) { num += encrypted[i + j] }
-            num = BigInt(parseInt(num))
-            if (num < n) {
-                arrNum.push(num);
-            } else {
-                alert(`coloque numeros menores que ${n}`);
+        let index = 0;
+        while (index < encrypted.length) {
+            for (let i = 0; i < encrypted[index].length; i += jump) {
+                let num = encrypted[index][i];
+                for (let j = 1; j < jump; j++) { num += encrypted[index][i + j] }
+                num = BigInt(parseInt(num))
+                if (num < n) {
+                    document.getElementById("encryptedData").value += `${num}\n`;
+                    arrNum.push(num);
+                } else {
+                    alert(`coloque numeros menores que ${n}`);
+                }
             }
         }
     } catch (error) {
@@ -105,7 +110,7 @@ function decipher() {
 
     arrNum.map((x) => {
         x = (x ** d) % n;
-        raw.value += x;
+        raw.value += `${x}\n`;
     });
 
     arrNum.splice(0, arrNum.length);
@@ -114,20 +119,26 @@ function decipher() {
 function encrypt() {
     let raw = document.getElementById("rawData").value;
     let encrypted = document.getElementById("encryptedData");
-    raw = raw.replace(/\s/gi, "");
+    document.getElementById("rawData").value = "";
+    raw = raw.replace(/\s/, "").split(`\n`);
     encrypted.value = "";
 
     try {
         const jump = n == 10 ? 1 : n.toString().length;
-        for (let i = 0; i < raw.length; i += jump) {
-            let num = raw[i];
-            for (let j = 1; j < jump; j++) { num += raw[i + j] }
-            num = BigInt(parseInt(num))
-            if (num < n) {
-                arrNum.push(num);
-            } else {
-                alert(`coloque numeros menores que ${n}`);
+        let index = 0;
+        while (index < raw.length) {
+            for (let i = 0; i < raw[index].length; i += jump) {
+                let num = raw[index][i];
+                for (let j = 1; j < jump; j++) { num += raw[index][i + j] }
+                num = BigInt(parseInt(num))
+                if (num < n) {
+                    document.getElementById("rawData").value += `${num}\n`;
+                    arrNum.push(num);
+                } else {
+                    alert(`coloque numeros menores que ${n}`);
+                }
             }
+            index++
         }
     } catch (e) {
         alert("deu erro, verifique se utilizou apenas numeros");
@@ -135,7 +146,7 @@ function encrypt() {
 
     arrNum.map((x) => {
         x = (x ** c) % n;
-        encrypted.value += x;
+        encrypted.value += `${x}\n`;
     });
 
     arrNum.splice(0, arrNum.length);
