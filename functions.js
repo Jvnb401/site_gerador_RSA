@@ -102,11 +102,13 @@ function decipher() {
                     alert(`coloque numeros menores que ${n}`);
                 }
             }
+            index += 1;
         }
     } catch (error) {
         alert("deu erro, verifique se utilizou apenas numeros");
     }
 
+    console.log("teste");
 
     arrNum.map((x) => {
         x = (x ** d) % n;
