@@ -40,6 +40,8 @@ for (let i = 3; i < 1000; i += 2) {
 }
 
 function Start() {
+    alert("numeros grandes podem demorar para fazer as operações necessarias");
+
     let p = IsItPrime(document.getElementById("p").value);
     if (p == "") {
         alert("digite um numero primo no p");
@@ -111,8 +113,13 @@ function decipher() {
     console.log("teste");
 
     arrNum.map((x) => {
-        x = (x ** d) % n;
-        raw.value += `${x}\n`;
+        try {
+            x = (x ** d) % n;
+            raw.value += `${x}\n`;
+        } catch (error) {
+            alert(`infelizmente o numero ${x} ao ser elevado a ${d} dá um numero acima do limite suportado pelo programa assim não podendo completar a formula:\n
+            (${x}^(${d}))mod${n}`)
+        }
     });
 
     arrNum.splice(0, arrNum.length);
@@ -147,8 +154,12 @@ function encrypt() {
     }
 
     arrNum.map((x) => {
-        x = (x ** c) % n;
-        encrypted.value += `${x}\n`;
+        try {
+            x = (x ** c) % n;
+            encrypted.value += `${x}\n`;
+        } catch (e) {
+            alert(`infelizmente o numero ${x} ao ser elevado a ${c} dá um numero acima do limite suportado pelo programa assim não podendo completar a formula:\n (${x}^(${c}))mod${n}`);
+        }
     });
 
     arrNum.splice(0, arrNum.length);
