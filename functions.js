@@ -110,8 +110,6 @@ function decipher() {
         alert("deu erro, verifique se utilizou apenas numeros");
     }
 
-    console.log("teste");
-
     arrNum.map((x) => {
         try {
             x = (x ** d) % n;
