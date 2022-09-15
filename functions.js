@@ -70,7 +70,7 @@ function Start() {
     }
 
     d = 0;
-    while ((d * c) % phiN != 1) { d++ }
+    while (((d * c) % phiN != 1) && (d != c)) { d++ }
     document.getElementById('d').value = d;
     document.getElementById("d").classList.add('actived');
 
