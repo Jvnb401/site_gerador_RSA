@@ -12,7 +12,7 @@
 <body>
     <header>
         <button onclick="document.location.reload()">limpar dados</button>
-        <button onclick="Start()">(De)Cifrar</button>
+        <button type="button" onclick="Start()">(De)Cifrar</button>
     </header>
 
     <main>
@@ -33,8 +33,8 @@
                     </div>
 
                     <div class="inputBox">
-                        <input type="number" id="n" disabled="true">
-                        <label for="n">φ (n)</label>
+                        <input type="number" id="phiN" disabled="true">
+                        <label for="phiN">φ (n)</label>
                     </div>
 
 
@@ -49,13 +49,13 @@
                     <legend>componentes publicos</legend>
 
                     <div class="inputBox">
-                        <input type="number" id="modN" disabled="true">
-                        <label for="modN">Módulo n</label>
+                        <input type="number" id="n" disabled="true">
+                        <label for="n">n</label>
                     </div>
 
                     <div class="inputBox">
                         <input type="number" id="c" name="c" required>
-                        <label for="c">chave publica c</label>
+                        <label for="c">chave publica e</label>
                     </div>
 
                 </fieldset>
@@ -72,18 +72,22 @@
 
                 <label for="rawData" class="hide">numeros decifrados</label>
                 <textarea name="texto" id="rawData" rows="10" placeholder="numeros decifrados"></textarea>
-                <button onclick="encrypt()">cifrar dados</button>
+                <button type="button" onclick="encrypt()">cifrar dados</button>
             </fieldset>
 
+            <fieldset>
+                <input type="number" name="length" id="length" placeholder="tamanho dos blocos descriptografados"
+                    readonly>
+            </fieldset><br>
             <fieldset>
                 <legend>decrifrar numeros</legend>
 
                 <label for="encryptedData" class="hide">numeros cifrados</label>
                 <textarea name="texto" id="encryptedData" rows="10" placeholder="numeros cifrados"></textarea>
-                <button onclick="decipher()">decifrar dados</button>
+                <button type="button" onclick="decipher()">decifrar dados</button>
             </fieldset>
 
-            <input type="checkbox" required hidden>
+
         </form>
     </main>
 
